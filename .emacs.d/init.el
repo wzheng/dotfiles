@@ -1,5 +1,5 @@
 ;; list the packages to install 
-(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode auto-complete moe-theme org-babel-eval-in-repl magit dimmer))
+(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode auto-complete moe-theme org-babel-eval-in-repl magit dimmer scala-mode))
 (setq package-enable-at-startup nil)
 (package-initialize)
 
@@ -124,3 +124,9 @@
     (helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm))))
 
 
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
