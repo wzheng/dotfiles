@@ -102,6 +102,8 @@
 
 (define-key global-map (kbd "C-x C-m") 'magit)
 
+(define-key global-map (kbd "M-s") 'set-mark-command)
+
 (delete-selection-mode 1)
 
 (require 'dimmer)
