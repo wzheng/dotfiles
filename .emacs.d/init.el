@@ -1,7 +1,6 @@
 ;; list the packages to install 
 (setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode auto-complete moe-theme org-babel-eval-in-repl magit dimmer scala-mode))
 (setq package-enable-at-startup nil)
-(package-initialize)
 
 (setq auto-save-default nil)
 (setq make-backup-files nil)
@@ -21,9 +20,7 @@
 
 (require 'package)
 (add-to-list 'load-path "~/.emacs.d/load")
-(add-to-list 'package-archives
-			 '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
+;(package-initialize)
 
 (unless package-archive-contents
   (package-refresh-contents))
