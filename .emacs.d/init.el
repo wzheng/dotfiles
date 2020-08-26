@@ -3,7 +3,7 @@
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode auto-complete moe-theme org-babel-eval-in-repl magit dimmer scala-mode))
+(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode))
 (package-initialize)
 
 (unless package-archive-contents
@@ -73,8 +73,6 @@
 ;; Prevent helm from splitting unrelated windows unnecessarily. The split will
 ;; always be handled by the above entry in `display-buffer-alist'
 (setq helm-split-window-preferred-function #'ignore)
-
-(ac-config-default)
 
 (require 'neotree)
   (global-set-key (kbd "C-x C-d") 'neotree-toggle)
