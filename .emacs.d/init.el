@@ -34,6 +34,8 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
+(setq-default TeX-master nil) ; Query for master file.
+
 (load-theme 'monokai t)
 
 (when (fboundp 'windmove-default-keybindings)
@@ -49,13 +51,6 @@
 (global-undo-tree-mode)
 
 (require 'smartparens-config)
-
-;; use Skim as default pdf viewer
-;; Skim's displayline is used for forward search (from .tex to .pdf)
-;; option -b highlights the current line; option -g opens Skim in the background
-(setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
-(setq TeX-view-program-list
-	  '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
 
 (defun always-display-buffer-in-side-window (buffer alist)
   (let ((result (display-buffer-in-side-window buffer alist))
@@ -106,11 +101,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2" default)))
+   '("816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2" default))
  '(package-selected-packages
-   (quote
-    (helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm))))
+   '(helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm)))
 
 
 (custom-set-faces
