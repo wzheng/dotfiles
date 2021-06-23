@@ -3,7 +3,7 @@
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode))
+(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag helm-xref popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode cmake-mode))
 (package-initialize)
 
 (unless package-archive-contents
@@ -50,13 +50,6 @@
 
 (require 'smartparens-config)
 
-;; use Skim as default pdf viewer
-;; Skim's displayline is used for forward search (from .tex to .pdf)
-;; option -b highlights the current line; option -g opens Skim in the background
-(setq TeX-view-program-selection '((output-pdf "PDF Viewer")))
-(setq TeX-view-program-list
-	  '(("PDF Viewer" "/Applications/Skim.app/Contents/SharedSupport/displayline -b -g %n %o %b")))
-
 (defun always-display-buffer-in-side-window (buffer alist)
   (let ((result (display-buffer-in-side-window buffer alist))
 		(window (get-buffer-window buffer)))
@@ -79,6 +72,8 @@
 
 (add-hook 'java-mode-hook #'rainbow-delimiters-mode)
 
+(add-hook 'c-mode-common-hook #'google-set-c-style)
+
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
@@ -100,17 +95,17 @@
 
 (setq mac-option-modifier 'meta)
 
+(setq dumb-jump-selector 'helm)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
-   (quote
-    ("816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2" default)))
+   '("816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2" default))
  '(package-selected-packages
-   (quote
-    (helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm))))
+   '(helm-xref xref cmake-mode google-c-style protobuf-mode dumb-jump helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm)))
 
 
 (custom-set-faces
