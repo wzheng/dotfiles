@@ -75,16 +75,14 @@
 (add-hook 'c-mode-common-hook #'google-set-c-style)
 
 (autoload
-  'ace-jump-mode
+   'ace-jump-mode
   "ace-jump-mode"
   "Emacs quick move minor mode"
   t)
 ;; you can select the key you prefer to
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
-
-(define-key global-map (kbd "C-x C-m") 'magit)
-
-(define-key global-map (kbd "M-s") 'set-mark-command)
+(define-key global-map (kbd "C-c SPC") 'helm-projectile)
+(define-key global-map (kbd "C-c o") 'projectile-find-other-file)
+(define-key global-map (kbd "C-c m") 'magit)
 
 (delete-selection-mode 1)
 
