@@ -90,8 +90,9 @@
 (setq mac-option-modifier 'meta)
 
 (setq dumb-jump-selector 'helm)
-;;(setq dumb-jump-prefer-searcher 'ag)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+(setq xref-show-definitions-function #'xref-show-definitions-completing-read)
+(setq dumb-jump-disable-obsolete-warnings t)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
