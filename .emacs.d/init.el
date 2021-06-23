@@ -34,6 +34,8 @@
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
 
+(setq-default TeX-master nil) ; Query for master file.
+
 (load-theme 'monokai t)
 
 (when (fboundp 'windmove-default-keybindings)
