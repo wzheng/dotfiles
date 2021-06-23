@@ -3,7 +3,7 @@
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag helm-xref popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode cmake-mode))
+(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag helm-xref popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode cmake-mode dumb-jump))
 (package-initialize)
 
 (unless package-archive-contents
@@ -33,8 +33,6 @@
 
 (add-hook 'LaTeX-mode-hook 'flyspell-mode)
 (add-hook 'LaTeX-mode-hook 'flyspell-buffer)
-
-(setq-default TeX-master nil) ; Query for master file.
 
 (load-theme 'monokai t)
 
@@ -98,6 +96,8 @@
 (setq mac-option-modifier 'meta)
 
 (setq dumb-jump-selector 'helm)
+(setq dumb-jump-prefer-searcher 'ag)
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
