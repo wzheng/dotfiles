@@ -74,15 +74,11 @@
 
 (add-hook 'c-mode-common-hook #'google-set-c-style)
 
-(autoload
-   'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
 ;; you can select the key you prefer to
 (define-key global-map (kbd "C-c SPC") 'helm-projectile)
 (define-key global-map (kbd "C-c o") 'projectile-find-other-file)
 (define-key global-map (kbd "C-c m") 'magit)
+(define-key global-map (kbd "C-c f") 'xref-find-definitions)
 
 (delete-selection-mode 1)
 
@@ -94,7 +90,7 @@
 (setq mac-option-modifier 'meta)
 
 (setq dumb-jump-selector 'helm)
-(setq dumb-jump-prefer-searcher 'ag)
+;;(setq dumb-jump-prefer-searcher 'ag)
 (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 
 (custom-set-variables
