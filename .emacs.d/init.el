@@ -49,6 +49,7 @@
 (define-key global-map (kbd "C-c o") 'projectile-find-other-file)
 (define-key global-map (kbd "C-c m") 'magit)
 (define-key global-map (kbd "C-c f") 'xref-find-definitions)
+(define-key global-map (kbd "C-c d") 'dumb-jump-back)
 (define-key global-map (kbd "C-s") 'swiper)
 (define-key global-map (kbd "C-r") 'swiper)
 
