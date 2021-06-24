@@ -3,7 +3,7 @@
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
-(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag helm-xref popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode cmake-mode dumb-jump))
+(setq package-list '(tuareg monokai-theme anzu async bash-completion dash helm helm-core helm-projectile helm-swoop helm-ag helm-xref popup projectile smex smartparens tramp-term undo-tree with-editor neotree rainbow-delimiters ace-jump-mode moe-theme org-babel-eval-in-repl magit dimmer scala-mode cmake-mode dumb-jump swiper))
 (package-initialize)
 
 (unless package-archive-contents
@@ -43,6 +43,14 @@
 (helm-mode 1)
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;;(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-c SPC") 'helm-projectile)
+(define-key global-map (kbd "C-c o") 'projectile-find-other-file)
+(define-key global-map (kbd "C-c m") 'magit)
+(define-key global-map (kbd "C-c f") 'xref-find-definitions)
+(define-key global-map (kbd "C-s") 'swiper)
+(define-key global-map (kbd "C-r") 'swiper)
 
 (global-anzu-mode +1)
 
@@ -74,12 +82,6 @@
 
 (add-hook 'c-mode-common-hook #'google-set-c-style)
 
-;; you can select the key you prefer to
-(define-key global-map (kbd "C-c SPC") 'helm-projectile)
-(define-key global-map (kbd "C-c o") 'projectile-find-other-file)
-(define-key global-map (kbd "C-c m") 'magit)
-(define-key global-map (kbd "C-c f") 'xref-find-definitions)
-
 (delete-selection-mode 1)
 
 (require 'dimmer)
@@ -102,7 +104,7 @@
  '(custom-safe-themes
    '("816bacf37139d6204b761fea0d25f7f2f43b94affa14aa4598bce46157c160c2" default))
  '(package-selected-packages
-   '(helm-xref xref cmake-mode google-c-style protobuf-mode dumb-jump helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm)))
+   '(swiper-helm helm-xref xref cmake-mode google-c-style protobuf-mode dumb-jump helm-rg ag dimmer magit org-babel-eval-in-repl zenburn-theme xkcd with-editor undo-tree tuareg tramp-term sublimity spacemacs-theme solarized-theme smex smartparens scala-mode2 rust-mode rainbow-delimiters org-bullets noctilux-theme neotree moe-theme latex-preview-pane heroku-theme helm-swoop helm-projectile helm-ag gruvbox-theme gnuplot-mode gnuplot flycheck cyberpunk-theme clues-theme calfw-org calfw-ical calfw bash-completion auctex anzu ample-zen-theme alect-themes afternoon-theme ace-jump-mode ac-helm)))
 
 
 (custom-set-faces
